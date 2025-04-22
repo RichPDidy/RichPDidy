@@ -12,6 +12,8 @@ gdjs.mainCode.GDbarrierObjects1= [];
 gdjs.mainCode.GDbarrierObjects2= [];
 gdjs.mainCode.GDsinglebrickObjects1= [];
 gdjs.mainCode.GDsinglebrickObjects2= [];
+gdjs.mainCode.GDNewSpriteObjects1= [];
+gdjs.mainCode.GDNewSpriteObjects2= [];
 
 
 gdjs.mainCode.mapOfGDgdjs_9546mainCode_9546GDballObjects1Objects = Hashtable.newFrom({"ball": gdjs.mainCode.GDballObjects1});
@@ -23,6 +25,8 @@ gdjs.mainCode.mapOfGDgdjs_9546mainCode_9546GDplayerObjects1Objects = Hashtable.n
 gdjs.mainCode.mapOfGDgdjs_9546mainCode_9546GDballObjects1Objects = Hashtable.newFrom({"ball": gdjs.mainCode.GDballObjects1});
 gdjs.mainCode.mapOfGDgdjs_9546mainCode_9546GDsinglebrickObjects1Objects = Hashtable.newFrom({"singlebrick": gdjs.mainCode.GDsinglebrickObjects1});
 gdjs.mainCode.mapOfGDgdjs_9546mainCode_9546GDsinglebrickObjects1Objects = Hashtable.newFrom({"singlebrick": gdjs.mainCode.GDsinglebrickObjects1});
+gdjs.mainCode.mapOfGDgdjs_9546mainCode_9546GDballObjects1Objects = Hashtable.newFrom({"ball": gdjs.mainCode.GDballObjects1});
+gdjs.mainCode.mapOfGDgdjs_9546mainCode_9546GDNewSpriteObjects1Objects = Hashtable.newFrom({"NewSprite": gdjs.mainCode.GDNewSpriteObjects1});
 gdjs.mainCode.eventsList0 = function(runtimeScene) {
 
 {
@@ -162,6 +166,22 @@ if (isConditionTrue_0) {
 }
 
 
+{
+
+gdjs.copyArray(runtimeScene.getObjects("NewSprite"), gdjs.mainCode.GDNewSpriteObjects1);
+gdjs.copyArray(runtimeScene.getObjects("ball"), gdjs.mainCode.GDballObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.mainCode.mapOfGDgdjs_9546mainCode_9546GDballObjects1Objects, gdjs.mainCode.mapOfGDgdjs_9546mainCode_9546GDNewSpriteObjects1Objects, false, runtimeScene, false);
+if (isConditionTrue_0) {
+{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "gameover", false);
+}{gdjs.evtTools.sound.playSound(runtimeScene, "", false, 100, 1);
+}}
+
+}
+
+
 };
 
 gdjs.mainCode.func = function(runtimeScene) {
@@ -179,6 +199,8 @@ gdjs.mainCode.GDbarrierObjects1.length = 0;
 gdjs.mainCode.GDbarrierObjects2.length = 0;
 gdjs.mainCode.GDsinglebrickObjects1.length = 0;
 gdjs.mainCode.GDsinglebrickObjects2.length = 0;
+gdjs.mainCode.GDNewSpriteObjects1.length = 0;
+gdjs.mainCode.GDNewSpriteObjects2.length = 0;
 
 gdjs.mainCode.eventsList0(runtimeScene);
 gdjs.mainCode.GDbackgroundObjects1.length = 0;
@@ -193,6 +215,8 @@ gdjs.mainCode.GDbarrierObjects1.length = 0;
 gdjs.mainCode.GDbarrierObjects2.length = 0;
 gdjs.mainCode.GDsinglebrickObjects1.length = 0;
 gdjs.mainCode.GDsinglebrickObjects2.length = 0;
+gdjs.mainCode.GDNewSpriteObjects1.length = 0;
+gdjs.mainCode.GDNewSpriteObjects2.length = 0;
 
 
 return;
